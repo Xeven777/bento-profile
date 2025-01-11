@@ -6,7 +6,6 @@ import {
   Linkedin,
   Instagram,
   Twitter,
-  Play,
   Heart,
   PenBoxIcon,
 } from "lucide-react";
