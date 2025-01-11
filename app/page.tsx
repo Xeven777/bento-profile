@@ -1,37 +1,39 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Github,
-  Linkedin,
-  Instagram,
-  Twitter,
-  Play,
-} from "lucide-react";
+import { Github, Linkedin, Instagram, Twitter, Play } from "lucide-react";
 import Image from "next/image";
 import { Card } from "@/components/card";
+import anish from "@/assets/anish2.jpg";
 import { ContributionGraph } from "@/components/contribution-graph";
+import ThemeTogglebutton from "@/components/ThemeBtn";
 
 export default function Page() {
   return (
     <div className="min-h-screen">
-      <div className="mx-auto flex max-w-7xl gap-8 px-4 py-8">
+      <div className="mx-auto w-full px-4 md:px-16 pt-20 pb-8 grid grid-cols-7 gap-8">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="sticky top-8 h-fit w-80 shrink-0"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="sticky top-8 p-2 col-span-3 h-fit"
         >
-          <div className="relative h-48 w-48 overflow-hidden rounded-full">
+          <div className="relative size-48 overflow-hidden rounded-full">
             <Image
-              src="/placeholder.svg"
-              alt="Profile"
-              className="object-cover"
+              src={anish}
+              alt="anish biswas"
+              className="object-cover hover:scale-105 transition-all duration-500"
               fill
               priority
             />
           </div>
-          <h1 className="mt-6 text-4xl font-bold">Anish Biswas</h1>
-          <p className="mt-2 text-zinc-600">Wassup guys ;)</p>
+          <h1 className="mt-6 pl-2 text-4xl md:text-5xl tracking-tighter font-bold bg-gradient-to-b from-foreground via-foreground/80 to-muted-foreground/50 text-transparent bg-clip-text">
+            Anish Biswas
+          </h1>
+          <p className="mt-2 pl-2 text-base md:text-xl text-muted-foreground">
+            Wassup guys ;)
+          </p>
+          <ThemeTogglebutton className="mt-10" />
         </motion.div>
 
         {/* Scrollable Right Content */}
@@ -47,29 +49,33 @@ export default function Page() {
               },
             },
           }}
-          className="grid flex-1 grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+          className="grid col-span-4 flex-1 grid-cols-1 gap-4 md:grid-cols-2"
         >
           {/* Portfolio Card */}
-          <Card className="col-span-full md:col-span-2" href="#">
+          <Card
+            className="col-span-full md:col-span-2"
+            href="https://anish7.me"
+          >
             <div className="flex items-center gap-4 p-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#84cc16]/10">
+              <div className="flex size-12 items-center justify-center rounded-xl bg-[#84cc16]/10">
                 <Image
-                  src="/placeholder.svg"
-                  alt="Portfolio Icon"
-                  width={32}
-                  height={32}
-                  className="rounded-lg"
+                  src="/primary.svg"
+                  alt="Anish Biswas Icon"
+                  width={28}
+                  height={28}
                 />
               </div>
               <div>
                 <h2 className="font-medium">My New Portfolio</h2>
-                <p className="text-sm text-zinc-600">anish@vercel.app</p>
+                <p className="text-sm hover:underline text-muted-foreground">
+                  anish7.me
+                </p>
               </div>
             </div>
-            <div className="px-4 pb-4">
-              <div className="relative h-[200px] overflow-hidden rounded-lg">
+            <div className="px-4 pb-4 mt-10">
+              <div className="relative h-52 overflow-hidden rounded-lg">
                 <Image
-                  src="/placeholder.svg"
+                  src="https://anish7.me/opengraph-image.jpg?deaf77301f5639ff"
                   alt="Portfolio Preview"
                   className="object-cover"
                   fill
@@ -95,7 +101,7 @@ export default function Page() {
           <Card className="col-span-full row-span-1 md:col-span-2">
             <div className="p-4">
               <ContributionGraph />
-              <p className="mt-2 text-sm text-zinc-600">
+              <p className="mt-2 text-sm text-muted-foreground">
                 5481 contributions in the last year
               </p>
             </div>
@@ -115,7 +121,7 @@ export default function Page() {
               </div>
               <div>
                 <h2 className="font-medium">my old portfolio</h2>
-                <p className="text-sm text-zinc-600">
+                <p className="text-sm text-muted-foreground">
                   next-portfolio7.vercel.app
                 </p>
               </div>
@@ -138,7 +144,9 @@ export default function Page() {
               <Linkedin className="h-6 w-6 text-[#0077b5]" />
               <div>
                 <h2 className="font-medium">Anish Biswas - Web Developer</h2>
-                <p className="text-sm text-zinc-600">OctaNet Services</p>
+                <p className="text-sm text-muted-foreground">
+                  OctaNet Services
+                </p>
               </div>
               <div className="relative ml-auto h-16 w-16 overflow-hidden rounded-lg">
                 <Image
@@ -184,7 +192,9 @@ export default function Page() {
               </div>
               <div>
                 <h2 className="font-medium">Certain Things</h2>
-                <p className="text-sm text-zinc-600">Now Playing on Spotify</p>
+                <p className="text-sm text-muted-foreground">
+                  Now Playing on Spotify
+                </p>
               </div>
               <div className="relative ml-auto h-16 w-16 overflow-hidden rounded-lg">
                 <Image
