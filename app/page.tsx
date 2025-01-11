@@ -98,11 +98,11 @@ export default function Page() {
             visible: {
               opacity: 1,
               transition: {
-                staggerChildren: 0.1,
+                staggerChildren: 0.15,
               },
             },
           }}
-          className="grid col-span-4 flex-1 grid-cols-1 gap-4 md:grid-cols-2"
+          className="grid col-span-4 pb-10 flex-1 grid-cols-1 gap-4 md:grid-cols-2"
         >
           {/* Portfolio Card */}
           <Card
@@ -203,7 +203,7 @@ export default function Page() {
           {/* LinkedIn Card */}
           <Card
             href="https://www.linkedin.com/in/anishbiswas777/"
-            className="col-span-2"
+            className="col-span-2 bg-gradient-to-br from-blue-500/5"
           >
             <div className="flex items-center gap-4 p-4">
               <Linkedin
@@ -229,7 +229,7 @@ export default function Page() {
               </div>
             </div>
             <div className="px-4 pb-4">
-              <div className="rounded-lg bg-muted/20 border px-1 transition-all duration-300 hover:bg-muted">
+              <div className="rounded-lg bg-muted/20 border px-1">
                 <p className="p-2 text-muted-foreground text-sm">
                   Hackathon Winner @StatusCode1
                 </p>
@@ -372,9 +372,7 @@ export default function Page() {
                 </div>
                 <div className="pt-4">
                   <h2 className="font-medium">Certain Things</h2>
-                  <p className="text-sm text-muted-foreground">
-                    Xeven
-                  </p>
+                  <p className="text-sm text-muted-foreground">Xeven</p>
                 </div>
                 <div className="relative ml-auto size-24 overflow-hidden rounded-lg">
                   <Image
