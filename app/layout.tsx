@@ -6,7 +6,8 @@ import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Anish Biswas",
-  description: "Wassup guys ;)",
+  description: "Anish's Bento Links",
+  metadataBase: new URL("https://bento.anish7.me"),
 };
 
 const font = DM_Sans({ subsets: ["latin"] });
