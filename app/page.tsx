@@ -8,8 +8,13 @@ import {
   Twitter,
   Play,
   Heart,
+  PenBoxIcon,
 } from "lucide-react";
+import insta1 from "@/assets/insta1.jpeg";
+import insta2 from "@/assets/insta2.jpeg";
+import insta3 from "@/assets/insta3.jpeg";
 import Image from "next/image";
+import statuscode from "@/assets/statuscode.jpeg";
 import { Card } from "@/components/card";
 import anish from "@/assets/anish2.jpg";
 import linkdinAnish from "@/assets/anish1.jpg";
@@ -22,12 +27,12 @@ import { Button } from "@/components/ui/button";
 export default function Page() {
   return (
     <div className="min-h-screen">
-      <div className="mx-auto w-full px-4 md:px-16 pt-20 pb-8 grid grid-cols-7 gap-8">
+      <div className="mx-auto w-full px-4 md:px-16 pt-20 pb-8 grid grid-cols-1 md:grid-cols-7 gap-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="sticky top-20 p-4 col-span-3 h-fit"
+          className="md:sticky w-full flex flex-col justify-between h-fit top-20 p-4 col-span-3"
         >
           <div className="relative size-48 overflow-hidden rounded-full">
             <Image
@@ -60,6 +65,7 @@ export default function Page() {
               texts={[
                 "Developer 🖥️",
                 "Designer 🎨",
+                "Music Producer 🎧",
                 "Football fan ⚽",
                 "sleepyhead 😴",
                 "meme lover 🤣",
@@ -76,7 +82,12 @@ export default function Page() {
               rotationInterval={2300}
             />
           </div>
-          <ThemeTogglebutton className="mt-10" />
+          <div className="my-auto items-center flex gap-6 md:fixed ml-auto z-50 md:bottom-12">
+            <ThemeTogglebutton />
+            <p className="text-muted-foreground opacity-60 hidden md:block">
+              Made with ❤️
+            </p>
+          </div>
         </motion.div>
 
         <motion.div
@@ -189,37 +200,6 @@ export default function Page() {
             </div>
           </Card>
 
-          {/* Blog Card */}
-          <Card href="https://blog.anish7.me" className="col-span-2">
-            <div className="flex items-center gap-4 p-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-100">
-                <Image
-                  src="https://blastro.vercel.app/favicon.svg"
-                  alt="Anish's Blog - Blastro"
-                  width={32}
-                  height={32}
-                  className="rounded-lg"
-                />
-              </div>
-              <div>
-                <h2 className="font-medium">my old portfolio</h2>
-                <p className="text-sm hover:underline text-muted-foreground">
-                  blog.anish7.me
-                </p>
-              </div>
-            </div>
-            <div className="px-4 mt-10 pb-4">
-              <div className="relative h-[200px] overflow-hidden rounded-lg bg-yellow-400">
-                <Image
-                  src="https://blog.anish7.me/opengraph-image.jpg"
-                  alt="Anish's Blog - Blastro"
-                  className="object-cover"
-                  fill
-                />
-              </div>
-            </div>
-          </Card>
-
           {/* LinkedIn Card */}
           <Card
             href="https://www.linkedin.com/in/anishbiswas777/"
@@ -239,7 +219,7 @@ export default function Page() {
                   Fullstack Developer | Intern
                 </p>
               </div>
-              <div className="relative ml-auto h-16 w-16 overflow-hidden rounded-lg">
+              <div className="relative ml-auto size-16 overflow-hidden rounded-lg">
                 <Image
                   src={linkdinAnish}
                   placeholder="blur"
@@ -248,7 +228,7 @@ export default function Page() {
                 />
               </div>
             </div>
-            <div className="px-4 pb-4 mt-4">
+            <div className="px-4 pb-4">
               <div className="rounded-lg bg-muted/20 border px-1 transition-all duration-300 hover:bg-muted">
                 <p className="p-2 text-muted-foreground text-sm">
                   Hackathon Winner @StatusCode1
@@ -257,8 +237,9 @@ export default function Page() {
                   <Image
                     fill
                     fetchPriority="low"
-                    src="https://media.licdn.com/dms/image/v2/D5622AQFOHEKNtWAQaA/feedshare-shrink_800/feedshare-shrink_800/0/1724685672258?e=1739404800&v=beta&t=c4PZP6c7cp8WBgaG_qnSxfHl1Z4J_p10iZsILlKe6is"
-                    alt="Linkedin Post"
+                    placeholder="blur"
+                    src={statuscode}
+                    alt="StatusCode Winners Aliens -Linkedin Post"
                     className="object-cover hover:scale-105 transition-all duration-500"
                   />
                 </div>
@@ -276,6 +257,42 @@ export default function Page() {
             </div>
           </Card>
 
+          {/* Blog Card */}
+          <Card href="https://blog.anish7.me" className="col-span-2">
+            <div className="flex items-center gap-4 p-4">
+              <div className="flex size-12 items-center justify-center rounded-xl bg-lime-900/10">
+                <Image
+                  src="https://blastro.vercel.app/favicon.svg"
+                  alt="Anish's Blog - Blastro"
+                  width={32}
+                  height={32}
+                  className="rounded-lg p-1"
+                />
+              </div>
+              <div>
+                <h2 className="font-medium">My Blog</h2>
+                <p className="text-sm hover:underline text-muted-foreground">
+                  blog.anish7.me
+                </p>
+              </div>
+            </div>
+            <div className="px-4 mt-4 pb-4">
+              <div className="rounded-lg bg-muted/20 border p-1 pb-0 transition-all duration-300 hover:bg-muted">
+                <div className="relative h-52 overflow-hidden rounded-lg">
+                  <Image
+                    src="https://blog.anish7.me/opengraph-image.jpg"
+                    alt="Anish's Blog - Blastro"
+                    className="object-cover hover:scale-105 transition-all duration-500"
+                    fill
+                  />
+                </div>
+                <p className="p-2 px-4 text-muted-foreground text-sm inline-flex items-center gap-2">
+                  <PenBoxIcon size={12} /> 6+ Blogs
+                </p>
+              </div>
+            </div>
+          </Card>
+
           {/* Contribution Graph */}
           <Card className="col-span-full row-span-1 md:col-span-2">
             <div className="p-4">
@@ -284,52 +301,92 @@ export default function Page() {
           </Card>
 
           {/* Social Media Cards */}
-          <Card href="#" className="group col-span-1">
+          <Card
+            href="https://www.instagram.com/anish_biswas_7_/"
+            className="group col-span-1"
+          >
             <div className="flex items-center gap-3 p-4">
-              <Instagram className="h-5 w-5 text-[#e4405f]" />
+              <Instagram className="size-6 text-rose-500" />
               <div>
-                <p className="font-medium">anish_biswas_7</p>
-                <button className="text-sm font-medium text-blue-500">
+                <p className="font-medium">anish_biswas_7_</p>
+                <p className="text-sm text-muted-foreground">712+ followers</p>
+              </div>
+              <Button className="ml-auto bg-gradient-to-br from-rose-600 text-white to-purple-600">
+                Follow
+              </Button>
+            </div>
+            <div className="grid grid-cols-3 h-40 border rounded-xl overflow-hidden">
+              <Image
+                src={insta1}
+                alt="Instagram Post"
+                className="object-cover size-full transition-all duration-300 hover:scale-105"
+              />
+              <Image
+                src={insta2}
+                alt="Instagram Post"
+                className="object-cover size-full transition-all duration-300 hover:scale-105"
+              />
+              <Image
+                src={insta3}
+                alt="Instagram Post"
+                className="object-cover size-full transition-all duration-300 hover:scale-105"
+              />
+            </div>
+          </Card>
+          <div className="grid grid-cols-1 gap-2">
+            <Card href="https://x.com/xevenbiswas" className="col-span-1">
+              <div className="flex items-center gap-3 p-4">
+                <Twitter className="size-6 text-blue-500" />
+                <div>
+                  <p className="font-medium">@xevenbiswas</p>
+                  <p className="text-sm text-muted-foreground">
+                    108+ followers
+                  </p>
+                </div>
+                <Button className="ml-auto bg-gradient-to-bl from-blue-600 text-white to-cyan-600">
                   Follow
-                </button>
+                </Button>
               </div>
-            </div>
-          </Card>
+            </Card>
 
-          <Card href="#" className="group col-span-1">
-            <div className="flex items-center gap-3 p-4">
-              <Twitter className="h-5 w-5 text-[#1da1f2]" />
-              <div>
-                <p className="font-medium">@biswas</p>
-                <button className="text-sm font-medium text-blue-500">
-                  Follow
-                </button>
+            {/* Spotify Card */}
+            <Card
+              href="https://open.spotify.com/track/5XLXut2VSILvfeUElPNx3p"
+              className="h-full bg-gradient-to-r from-green-600/10 dark:to-green-900/10"
+            >
+              <div className="flex items-start gap-2 p-4">
+                <div className="size-12 pt-4">
+                  <svg
+                    viewBox="0 0 256 256"
+                    width="256"
+                    className="size-10"
+                    height="256"
+                    xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="xMidYMid"
+                  >
+                    <path
+                      d="M128 0C57.308 0 0 57.309 0 128c0 70.696 57.309 128 128 128 70.697 0 128-57.304 128-128C256 57.314 198.697.007 127.998.007l.001-.006Zm58.699 184.614c-2.293 3.76-7.215 4.952-10.975 2.644-30.053-18.357-67.885-22.515-112.44-12.335a7.981 7.981 0 0 1-9.552-6.007 7.968 7.968 0 0 1 6-9.553c48.76-11.14 90.583-6.344 124.323 14.276 3.76 2.308 4.952 7.215 2.644 10.975Zm15.667-34.853c-2.89 4.695-9.034 6.178-13.726 3.289-34.406-21.148-86.853-27.273-127.548-14.92-5.278 1.594-10.852-1.38-12.454-6.649-1.59-5.278 1.386-10.842 6.655-12.446 46.485-14.106 104.275-7.273 143.787 17.007 4.692 2.89 6.175 9.034 3.286 13.72v-.001Zm1.345-36.293C162.457 88.964 94.394 86.71 55.007 98.666c-6.325 1.918-13.014-1.653-14.93-7.978-1.917-6.328 1.65-13.012 7.98-14.935C93.27 62.027 168.434 64.68 215.929 92.876c5.702 3.376 7.566 10.724 4.188 16.405-3.362 5.69-10.73 7.565-16.4 4.187h-.006Z"
+                      fill="#1ED760"
+                    />
+                  </svg>
+                </div>
+                <div className="pt-4">
+                  <h2 className="font-medium">Certain Things</h2>
+                  <p className="text-sm text-muted-foreground">
+                    Xeven
+                  </p>
+                </div>
+                <div className="relative ml-auto size-24 overflow-hidden rounded-lg">
+                  <Image
+                    src="https://i.scdn.co/image/ab6761670000ecd4cd1b44b074cbf57946694e8b"
+                    alt="Album Cover"
+                    className="object-cover"
+                    fill
+                  />
+                </div>
               </div>
-            </div>
-          </Card>
-
-          {/* Spotify Card */}
-          <Card href="#" className="col-span-2">
-            <div className="flex items-center gap-4 p-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1ed760]/10">
-                <Play className="h-6 w-6 text-[#1ed760]" />
-              </div>
-              <div>
-                <h2 className="font-medium">Certain Things</h2>
-                <p className="text-sm text-muted-foreground">
-                  Now Playing on Spotify
-                </p>
-              </div>
-              <div className="relative ml-auto h-16 w-16 overflow-hidden rounded-lg">
-                <Image
-                  src="/placeholder.svg"
-                  alt="Album Cover"
-                  className="object-cover"
-                  fill
-                />
-              </div>
-            </div>
-          </Card>
+            </Card>
+          </div>
         </motion.div>
       </div>
     </div>

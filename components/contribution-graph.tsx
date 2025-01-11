@@ -2,22 +2,45 @@
 
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 export function ContributionGraph() {
+  // 1. All useState hooks
   const [contributions, setContributions] = useState<number[]>([]);
   const [totalContributions, setTotalContributions] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // 2. useWindowSize hook
+  const { width } = useWindowSize();
+
+  // 3. useMemo for calculations
+  const { visibleContributions, periodTotal } = useMemo(() => {
+    let slicedContributions;
+    if (width < 640) {
+      slicedContributions = contributions.slice(-91);
+    } else if (width < 768) {
+      slicedContributions = contributions.slice(-182);
+    } else {
+      slicedContributions = contributions;
+    }
+
+    const total = slicedContributions.reduce((sum, count) => sum + count, 0);
+
+    return {
+      visibleContributions: slicedContributions,
+      periodTotal: total,
+    };
+  }, [contributions, width]);
+
+  // 4. useEffect for data fetching
   useEffect(() => {
     async function fetchContributions() {
       try {
         const response = await fetch("/api/github", {
           cache: "force-cache",
-          next: {
-            revalidate: 36000,
-          },
+          next: { revalidate: 36000 },
         });
         const data = await response.json();
 
@@ -39,7 +62,6 @@ export function ContributionGraph() {
 
     fetchContributions();
   }, []);
-
   if (loading)
     return (
       <div className="relative w-full rounded-xl h-52 bg-muted animate-pulse">
@@ -67,7 +89,7 @@ export function ContributionGraph() {
   return (
     <div className="overflow-hidden">
       <div className="flex flex-wrap gap-1">
-        {contributions.map((count, i) => (
+        {visibleContributions.map((count, i) => (
           <motion.div
             key={i}
             initial={{ scale: 0, opacity: 0 }}
@@ -91,7 +113,8 @@ export function ContributionGraph() {
         ))}
       </div>
       <p className="text-sm text-muted-foreground mt-4 text-center">
-        {totalContributions.toLocaleString()} contributions in the last year
+        {periodTotal.toLocaleString()} contributions in the last{" "}
+        {width < 640 ? "3 months" : width < 768 ? "6 months" : "year"}
       </p>
     </div>
   );
