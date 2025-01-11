@@ -23,7 +23,7 @@ export function Card({ href, className, children, ...props }: CardProps) {
         },
       }}
       className={cn(
-        "overflow-hidden rounded-2xl border bg-card shadow-sm active:scale-95",
+        "overflow-hidden rounded-2xl border bg-card shadow-sm p-2",
         className
       )}
       {...props}

@@ -9,6 +9,7 @@ import { ContributionGraph } from "@/components/contribution-graph";
 import ThemeTogglebutton from "@/components/ThemeBtn";
 import VerticalCutReveal from "@/components/fancy/vertical-cut-reveal";
 import TextRotate from "@/components/fancy/text-rotate";
+import { Button } from "@/components/ui/button";
 
 export default function Page() {
   return (
@@ -110,7 +111,7 @@ export default function Page() {
                 <Image
                   src="https://anish7.me/opengraph-image.jpg?deaf77301f5639ff"
                   alt="Portfolio Preview"
-                  className="object-cover"
+                  className="object-cover hover:scale-105 transition-all duration-500"
                   fill
                 />
               </div>
@@ -118,15 +119,39 @@ export default function Page() {
           </Card>
 
           {/* GitHub Card */}
-          <Card href="#" className="col-span-1">
+          <Card href="http://git.new/anish" className="col-span-1">
             <div className="flex items-center justify-between p-4">
               <div className="flex items-center gap-3">
-                <Github className="h-5 w-5" />
-                <span className="font-medium">Anish</span>
+                <div className="flex size-12 items-center justify-center rounded-xl dark:bg-blue-500/10 bg-slate-900/10">
+                  <Github className="size-6" />
+                </div>
+                <div>
+                  <h2 className="font-medium">Anish</h2>
+                  <p className="text-sm hover:underline text-muted-foreground">
+                    xeven777
+                  </p>
+                </div>
               </div>
-              <button className="rounded-full bg-zinc-100 px-4 py-1 text-sm font-medium">
-                Follow
-              </button>
+              <Button>Follow</Button>
+            </div>
+            <div className="px-4 pb-4 mt-10">
+              <div className="relative h-52">
+                <div className="flex gap-4 items-start">
+                  <img
+                    src="https://avatars.githubusercontent.com/u/115650165?v=4"
+                    alt="Anish Biswas"
+                    className="object-cover rounded-xl size-20"
+                  />
+                  <div className="py-1 space-y-2">
+                    <h2 className="text-lg text">@Xeven777</h2>
+                    <p className="line-clamp-2 text-xs text-muted-foreground break-words ellipsis">
+                      ♦️Learning. Growing. Blooming✨ | Passionate developer
+                      with a love for problem-solving , efficient and creative
+                      thinking 🔥💫
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </Card>
 
