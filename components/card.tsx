@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -24,7 +23,7 @@ export function Card({ href, className, children, ...props }: CardProps) {
         },
       }}
       className={cn(
-        "overflow-hidden rounded-2xl border bg-card shadow-sm",
+        "overflow-hidden rounded-2xl border bg-card shadow-sm active:scale-95",
         className
       )}
       {...props}

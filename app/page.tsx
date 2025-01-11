@@ -7,6 +7,8 @@ import { Card } from "@/components/card";
 import anish from "@/assets/anish2.jpg";
 import { ContributionGraph } from "@/components/contribution-graph";
 import ThemeTogglebutton from "@/components/ThemeBtn";
+import VerticalCutReveal from "@/components/fancy/vertical-cut-reveal";
+import TextRotate from "@/components/fancy/text-rotate";
 
 export default function Page() {
   return (
@@ -27,12 +29,43 @@ export default function Page() {
               priority
             />
           </div>
-          <h1 className="mt-6 pl-2 text-4xl md:text-5xl tracking-tighter font-bold bg-gradient-to-b from-foreground via-foreground/80 to-muted-foreground/50 text-transparent bg-clip-text">
-            Anish Biswas
+          <h1 className="mt-6 pl-2 text-4xl md:text-5xl tracking-tighter font-bold bg-gradient-to-b from-foreground via-foreground/80 to-muted-foreground/50 text-transparent bg-clip-text text-glow cursor-crosshair">
+            <VerticalCutReveal
+              splitBy="characters"
+              staggerDuration={0.03}
+              staggerFrom="first"
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 21,
+                delay: 0.8,
+              }}
+            >
+              {`Anish Biswas`}
+            </VerticalCutReveal>
           </h1>
-          <p className="mt-2 pl-2 text-base md:text-xl text-muted-foreground">
-            Wassup guys ;)
-          </p>
+          <div className="mt-4 flex pl-2 text-base md:text-xl text-muted-foreground">
+            <span>Im a</span>
+            <TextRotate
+              texts={[
+                "Developer 🖥️",
+                "Designer 🎨",
+                "Football fan ⚽",
+                "sleepyhead 😴",
+                "meme lover 🤣",
+                "LEGEND 🕶️",
+              ]}
+              mainClassName="px-2 text-foreground"
+              staggerFrom={"last"}
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+              transition={{ type: "spring", damping: 50, stiffness: 400 }}
+              rotationInterval={2300}
+            />
+          </div>
           <ThemeTogglebutton className="mt-10" />
         </motion.div>
 
