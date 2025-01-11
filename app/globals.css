@@ -89,7 +89,7 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground selection:bg-foreground selection:text-background;
   }
 }
 
@@ -100,4 +100,12 @@ body {
 
 .text-glow:hover {
   text-shadow: 0 0 10px rgba(202, 202, 202, 0.5);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted rounded-lg;
 }

@@ -1,10 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Instagram, Twitter, Play } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Instagram,
+  Twitter,
+  Play,
+  Heart,
+} from "lucide-react";
 import Image from "next/image";
 import { Card } from "@/components/card";
 import anish from "@/assets/anish2.jpg";
+import linkdinAnish from "@/assets/anish1.jpg";
 import { ContributionGraph } from "@/components/contribution-graph";
 import ThemeTogglebutton from "@/components/ThemeBtn";
 import VerticalCutReveal from "@/components/fancy/vertical-cut-reveal";
@@ -19,12 +27,13 @@ export default function Page() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="sticky top-8 p-2 col-span-3 h-fit"
+          className="sticky top-20 p-4 col-span-3 h-fit"
         >
           <div className="relative size-48 overflow-hidden rounded-full">
             <Image
               src={anish}
-              alt="anish biswas"
+              placeholder="blur"
+              alt="Anish Biswas"
               className="object-cover hover:scale-105 transition-all duration-500"
               fill
               priority
@@ -70,7 +79,6 @@ export default function Page() {
           <ThemeTogglebutton className="mt-10" />
         </motion.div>
 
-        {/* Scrollable Right Content */}
         <motion.div
           initial="hidden"
           animate="visible"
@@ -151,17 +159,33 @@ export default function Page() {
                     </p>
                   </div>
                 </div>
+                <div className="grid grid-cols-3 mt-12">
+                  <div className="flex flex-col items-center justify-center p-2">
+                    <p className="text-4xl font-mono tracking-tight font-semibold">
+                      120+
+                    </p>
+                    <p className="text-sm font-light text-muted-foreground">
+                      Stars
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center justify-center p-2">
+                    <p className="text-4xl font-mono tracking-tight font-semibold">
+                      220+
+                    </p>
+                    <p className="text-sm font-light text-muted-foreground">
+                      Repositories
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center justify-center p-2">
+                    <p className="text-4xl font-mono tracking-tight font-semibold">
+                      125+
+                    </p>
+                    <p className="text-sm font-light text-muted-foreground">
+                      Followers
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </Card>
-
-          {/* Contribution Graph */}
-          <Card className="col-span-full row-span-1 md:col-span-2">
-            <div className="p-4">
-              <ContributionGraph />
-              <p className="mt-2 text-sm text-muted-foreground">
-                5481 contributions in the last year
-              </p>
             </div>
           </Card>
 
@@ -197,23 +221,68 @@ export default function Page() {
           </Card>
 
           {/* LinkedIn Card */}
-          <Card href="#" className="col-span-2">
+          <Card
+            href="https://www.linkedin.com/in/anishbiswas777/"
+            className="col-span-2"
+          >
             <div className="flex items-center gap-4 p-4">
-              <Linkedin className="h-6 w-6 text-[#0077b5]" />
+              <Linkedin
+                className="size-10 rounded-xl py-1 px-2 bg-blue-600"
+                color="white"
+                fill="white"
+                strokeWidth={1}
+                stroke="none"
+              />
               <div>
-                <h2 className="font-medium">Anish Biswas - Web Developer</h2>
+                <h2 className="font-medium">Anish Biswas</h2>
                 <p className="text-sm text-muted-foreground">
-                  OctaNet Services
+                  Fullstack Developer | Intern
                 </p>
               </div>
               <div className="relative ml-auto h-16 w-16 overflow-hidden rounded-lg">
                 <Image
-                  src="/placeholder.svg"
-                  alt="LinkedIn Profile"
-                  className="object-cover"
-                  fill
+                  src={linkdinAnish}
+                  placeholder="blur"
+                  alt="Anish Biswas Linkedin"
+                  className="rounded-xl size-20 object-cover"
                 />
               </div>
+            </div>
+            <div className="px-4 pb-4 mt-4">
+              <div className="rounded-lg bg-muted/20 border px-1 transition-all duration-300 hover:bg-muted">
+                <p className="p-2 text-muted-foreground text-sm">
+                  Hackathon Winner @StatusCode1
+                </p>
+                <div className="h-44 overflow-hidden rounded-lg relative">
+                  <Image
+                    fill
+                    fetchPriority="low"
+                    src="https://media.licdn.com/dms/image/v2/D5622AQFOHEKNtWAQaA/feedshare-shrink_800/feedshare-shrink_800/0/1724685672258?e=1739404800&v=beta&t=c4PZP6c7cp8WBgaG_qnSxfHl1Z4J_p10iZsILlKe6is"
+                    alt="Linkedin Post"
+                    className="object-cover hover:scale-105 transition-all duration-500"
+                  />
+                </div>
+                <div className="flex tracking-tighter justify-between">
+                  <p className="p-2 px-4 text-muted-foreground text-sm inline-flex items-center gap-2">
+                    <Heart className="size-4 rounded-full bg-rose-700 fill-rose-300 stroke-rose-300 p-0.5 inline-block" />{" "}
+                    585 Likes
+                  </p>
+
+                  <p className="p-2 px-4 text-muted-foreground text-sm">
+                    45 comments
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          {/* Contribution Graph */}
+          <Card className="col-span-full row-span-1 md:col-span-2">
+            <div className="p-4">
+              <ContributionGraph />
+              <p className="mt-2 text-sm text-muted-foreground">
+                5481 contributions in the last year
+              </p>
             </div>
           </Card>
 
