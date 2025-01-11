@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 export function ContributionGraph() {
   const [contributions, setContributions] = useState<number[]>([]);
+  const [totalContributions, setTotalContributions] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -20,13 +21,15 @@ export function ContributionGraph() {
         });
         const data = await response.json();
 
-        const contributionDays =
-          data.data.user.contributionsCollection.contributionCalendar.weeks.flatMap(
-            (week: any) =>
-              week.contributionDays.map((day: any) => day.contributionCount)
-          );
+        const contributionCalendar =
+          data.data.user.contributionsCollection.contributionCalendar;
+        const contributionDays = contributionCalendar.weeks.flatMap(
+          (week: any) =>
+            week.contributionDays.map((day: any) => day.contributionCount)
+        );
 
         setContributions(contributionDays);
+        setTotalContributions(contributionCalendar.totalContributions);
       } catch (err) {
         setError("Failed to load contributions");
       } finally {
@@ -37,13 +40,27 @@ export function ContributionGraph() {
     fetchContributions();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
+  if (loading)
+    return (
+      <div className="relative w-full rounded-xl h-52 bg-muted animate-pulse">
+        <h2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-lg font-light text-center tracking-widest text-muted-foreground">
+          Loading...
+        </h2>
+      </div>
+    );
+  if (error)
+    return (
+      <div className="relative w-full rounded-xl h-52 bg-rose-800/10">
+        <h2 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-lg font-light text-center tracking-widest text-rose-500">
+          Ooops. Error!
+        </h2>
+      </div>
+    );
 
   const getContributionLevel = (count: number) => {
     if (count === 0) return 0;
-    if (count <= 3) return 1;
-    if (count <= 6) return 2;
+    if (count <= 5) return 1;
+    if (count <= 9) return 2;
     return 3;
   };
 
@@ -60,7 +77,7 @@ export function ContributionGraph() {
               duration: 0.2,
             }}
             className={cn(
-              "size-3 rounded-sm",
+              "size-3 rounded-[3px]",
               getContributionLevel(count) === 0 &&
                 "bg-zinc-100 dark:bg-zinc-800",
               getContributionLevel(count) === 1 &&
@@ -73,6 +90,9 @@ export function ContributionGraph() {
           />
         ))}
       </div>
+      <p className="text-sm text-muted-foreground mt-4 text-center">
+        {totalContributions.toLocaleString()} contributions in the last year
+      </p>
     </div>
   );
 }

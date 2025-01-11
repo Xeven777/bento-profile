@@ -127,7 +127,7 @@ export default function Page() {
           </Card>
 
           {/* GitHub Card */}
-          <Card href="http://git.new/anish" className="col-span-1">
+          <Card href="https://git.new/anish" className="col-span-1">
             <div className="flex items-center justify-between p-4">
               <div className="flex items-center gap-3">
                 <div className="flex size-12 items-center justify-center rounded-xl dark:bg-blue-500/10 bg-slate-900/10">
@@ -189,13 +189,13 @@ export default function Page() {
             </div>
           </Card>
 
-          {/* Old Portfolio Card */}
-          <Card href="#" className="col-span-2">
+          {/* Blog Card */}
+          <Card href="https://blog.anish7.me" className="col-span-2">
             <div className="flex items-center gap-4 p-4">
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-zinc-100">
                 <Image
-                  src="/placeholder.svg"
-                  alt="Old Portfolio"
+                  src="https://blastro.vercel.app/favicon.svg"
+                  alt="Anish's Blog - Blastro"
                   width={32}
                   height={32}
                   className="rounded-lg"
@@ -203,16 +203,16 @@ export default function Page() {
               </div>
               <div>
                 <h2 className="font-medium">my old portfolio</h2>
-                <p className="text-sm text-muted-foreground">
-                  next-portfolio7.vercel.app
+                <p className="text-sm hover:underline text-muted-foreground">
+                  blog.anish7.me
                 </p>
               </div>
             </div>
-            <div className="px-4 pb-4">
+            <div className="px-4 mt-10 pb-4">
               <div className="relative h-[200px] overflow-hidden rounded-lg bg-yellow-400">
                 <Image
-                  src="/placeholder.svg"
-                  alt="Old Portfolio Preview"
+                  src="https://blog.anish7.me/opengraph-image.jpg"
+                  alt="Anish's Blog - Blastro"
                   className="object-cover"
                   fill
                 />
@@ -280,9 +280,6 @@ export default function Page() {
           <Card className="col-span-full row-span-1 md:col-span-2">
             <div className="p-4">
               <ContributionGraph />
-              <p className="mt-2 text-sm text-muted-foreground">
-                5481 contributions in the last year
-              </p>
             </div>
           </Card>
 
