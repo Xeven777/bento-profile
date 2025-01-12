@@ -153,25 +153,25 @@ export default function Page() {
                     </p>
                   </div>
                 </div>
-                <div className="grid grid-cols-3 mt-12">
-                  <div className="flex flex-col items-center justify-center p-2">
-                    <p className="text-2xl md:text-4xl font-mono tracking-tight font-semibold">
+                <div className="grid grid-cols-3 gap-1 mt-12">
+                  <div className="flex flex-col items-center justify-center">
+                    <p className="text-2xl opacity-80 md:text-3xl xl:text-4xl font-mono tracking-tight font-semibold">
                       120+
                     </p>
                     <p className="text-sm font-light text-muted-foreground">
                       Stars
                     </p>
                   </div>
-                  <div className="flex flex-col items-center justify-center p-2">
-                    <p className="text-2xl md:text-4xl font-mono tracking-tight font-semibold">
+                  <div className="flex flex-col items-center justify-center">
+                    <p className="text-2xl opacity-80 md:text-3xl xl:text-4xl font-mono tracking-tight font-semibold">
                       220+
                     </p>
                     <p className="text-sm font-light text-muted-foreground">
                       Repositories
                     </p>
                   </div>
-                  <div className="flex flex-col items-center justify-center p-2">
-                    <p className="text-2xl md:text-4xl font-mono tracking-tight font-semibold">
+                  <div className="flex flex-col items-center justify-center">
+                    <p className="text-2xl opacity-80 md:text-3xl xl:text-4xl font-mono tracking-tight font-semibold">
                       125+
                     </p>
                     <p className="text-sm font-light text-muted-foreground">
