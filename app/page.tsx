@@ -19,7 +19,6 @@ import anish from "@/assets/anish2.jpg";
 import linkdinAnish from "@/assets/anish1.jpg";
 import { ContributionGraph } from "@/components/contribution-graph";
 import ThemeTogglebutton from "@/components/ThemeBtn";
-import VerticalCutReveal from "@/components/fancy/vertical-cut-reveal";
 import TextRotate from "@/components/fancy/text-rotate";
 import { Button } from "@/components/ui/button";
 
@@ -44,19 +43,7 @@ export default function Page() {
             />
           </div>
           <h1 className="mt-6 pl-2 text-4xl md:text-5xl tracking-tighter font-bold bg-gradient-to-b from-foreground via-foreground/80 to-muted-foreground/50 text-transparent bg-clip-text text-glow cursor-crosshair">
-            <VerticalCutReveal
-              splitBy="characters"
-              staggerDuration={0.03}
-              staggerFrom="first"
-              transition={{
-                type: "spring",
-                stiffness: 200,
-                damping: 21,
-                delay: 0.8,
-              }}
-            >
-              {`Anish Biswas`}
-            </VerticalCutReveal>
+            Anish Biswas
           </h1>
           <div className="mt-4 flex pl-2 text-base md:text-xl text-muted-foreground">
             <span>Im a</span>
@@ -97,19 +84,16 @@ export default function Page() {
             visible: {
               opacity: 1,
               transition: {
-                staggerChildren: 0.15,
+                staggerChildren: 0.2,
               },
             },
           }}
-          className="grid col-span-4 pb-10 flex-1 grid-cols-1 gap-4 md:grid-cols-2"
+          className="lg:grid flex flex-col flex-wrap col-span-4 pb-10 gap-4 lg:grid-cols-2"
         >
           {/* Portfolio Card */}
-          <Card
-            className="col-span-full md:col-span-2"
-            href="https://anish7.me"
-          >
+          <Card className="col-span-1 flex-1" href="https://anish7.me">
             <div className="flex items-center gap-4 p-4">
-              <div className="flex size-12 items-center justify-center rounded-xl bg-[#84cc16]/10">
+              <div className="flex size-12 items-center justify-center rounded-xl bg-lime-800/20">
                 <Image
                   src="/primary.svg"
                   alt="Anish Biswas Icon"
@@ -171,7 +155,7 @@ export default function Page() {
                 </div>
                 <div className="grid grid-cols-3 mt-12">
                   <div className="flex flex-col items-center justify-center p-2">
-                    <p className="text-4xl font-mono tracking-tight font-semibold">
+                    <p className="text-2xl md:text-4xl font-mono tracking-tight font-semibold">
                       120+
                     </p>
                     <p className="text-sm font-light text-muted-foreground">
@@ -179,7 +163,7 @@ export default function Page() {
                     </p>
                   </div>
                   <div className="flex flex-col items-center justify-center p-2">
-                    <p className="text-4xl font-mono tracking-tight font-semibold">
+                    <p className="text-2xl md:text-4xl font-mono tracking-tight font-semibold">
                       220+
                     </p>
                     <p className="text-sm font-light text-muted-foreground">
@@ -187,7 +171,7 @@ export default function Page() {
                     </p>
                   </div>
                   <div className="flex flex-col items-center justify-center p-2">
-                    <p className="text-4xl font-mono tracking-tight font-semibold">
+                    <p className="text-2xl md:text-4xl font-mono tracking-tight font-semibold">
                       125+
                     </p>
                     <p className="text-sm font-light text-muted-foreground">
@@ -202,7 +186,7 @@ export default function Page() {
           {/* LinkedIn Card */}
           <Card
             href="https://www.linkedin.com/in/anishbiswas777/"
-            className="col-span-2 bg-gradient-to-br from-blue-500/5"
+            className="col-span-1 bg-gradient-to-br from-blue-500/5"
           >
             <div className="flex items-center gap-4 p-4">
               <Linkedin
@@ -257,9 +241,9 @@ export default function Page() {
           </Card>
 
           {/* Blog Card */}
-          <Card href="https://blog.anish7.me" className="col-span-2">
+          <Card href="https://blog.anish7.me" className="col-span-1">
             <div className="flex items-center gap-4 p-4">
-              <div className="flex size-12 items-center justify-center rounded-xl bg-lime-900/10">
+              <div className="flex size-12 items-center justify-center rounded-xl bg-lime-800/20">
                 <Image
                   src="https://blastro.vercel.app/favicon.svg"
                   alt="Anish's Blog - Blastro"
@@ -293,7 +277,7 @@ export default function Page() {
           </Card>
 
           {/* Contribution Graph */}
-          <Card className="col-span-full row-span-1 md:col-span-2">
+          <Card className="col-span-full">
             <div className="p-4">
               <ContributionGraph />
             </div>
