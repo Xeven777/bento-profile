@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { DM_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
+import Clarity from "@/components/Clarity";
 
 export const metadata: Metadata = {
   title: "Anish Biswas",
@@ -19,6 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      {process.env.NODE_ENV === "production" ? <Clarity /> : null}
       <body className={cn(font.className, "antialiased")}>
         <ThemeProvider attribute="class">{children}</ThemeProvider>
       </body>
