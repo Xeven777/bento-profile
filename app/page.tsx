@@ -25,12 +25,12 @@ import { Button } from "@/components/ui/button";
 export default function Page() {
   return (
     <div className="min-h-screen">
-      <div className="mx-auto w-full px-4 md:px-16 pt-20 pb-8 grid grid-cols-1 md:grid-cols-7 gap-8">
+      <div className="mx-auto w-full px-4 md:px-16 py-10 md:pt-20 grid grid-cols-1 md:grid-cols-7 gap-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="md:sticky w-full flex flex-col justify-between h-fit top-20 p-4 col-span-3"
+          className="md:sticky w-full flex flex-col justify-between h-fit md:top-20 px-4 py-2 md:p-4 col-span-3"
         >
           <div className="relative size-48 overflow-hidden rounded-full">
             <Image
@@ -93,7 +93,7 @@ export default function Page() {
           {/* Portfolio Card */}
           <Card className="col-span-1 flex-1" href="https://anish7.me">
             <div className="flex items-center gap-4 p-4">
-              <div className="flex size-12 items-center justify-center rounded-xl bg-lime-800/20">
+              <div className="flex size-12 items-center justify-center rounded-xl bg-lime-200/30 dark:bg-lime-800/20">
                 <Image
                   src="/primary.svg"
                   alt="Anish Biswas Icon"
@@ -243,7 +243,7 @@ export default function Page() {
           {/* Blog Card */}
           <Card href="https://blog.anish7.me" className="col-span-1">
             <div className="flex items-center gap-4 p-4">
-              <div className="flex size-12 items-center justify-center rounded-xl bg-lime-800/20">
+              <div className="flex size-12 items-center justify-center rounded-xl bg-lime-200/30 dark:bg-lime-800/20">
                 <Image
                   src="https://blastro.vercel.app/favicon.svg"
                   alt="Anish's Blog - Blastro"
