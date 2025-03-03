@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       {process.env.NODE_ENV === "production" ? <Clarity /> : null}
       <body className={cn(font.className, "antialiased")}>
         <ThemeProvider attribute="class">{children}</ThemeProvider>

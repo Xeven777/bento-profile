@@ -156,7 +156,7 @@ export default function Page() {
                 <div className="grid grid-cols-3 gap-1 mt-12">
                   <div className="flex flex-col items-center justify-center">
                     <p className="text-2xl opacity-80 md:text-3xl xl:text-4xl font-mono tracking-tight font-semibold">
-                      120+
+                      162+
                     </p>
                     <p className="text-sm font-light text-muted-foreground">
                       Stars
@@ -164,7 +164,7 @@ export default function Page() {
                   </div>
                   <div className="flex flex-col items-center justify-center">
                     <p className="text-2xl opacity-80 md:text-3xl xl:text-4xl font-mono tracking-tight font-semibold">
-                      220+
+                      240+
                     </p>
                     <p className="text-sm font-light text-muted-foreground">
                       Repositories
@@ -172,7 +172,7 @@ export default function Page() {
                   </div>
                   <div className="flex flex-col items-center justify-center">
                     <p className="text-2xl opacity-80 md:text-3xl xl:text-4xl font-mono tracking-tight font-semibold">
-                      125+
+                      140+
                     </p>
                     <p className="text-sm font-light text-muted-foreground">
                       Followers
@@ -229,7 +229,7 @@ export default function Page() {
                 <div className="flex tracking-tighter justify-between">
                   <p className="p-2 px-4 text-muted-foreground text-sm inline-flex items-center gap-2">
                     <Heart className="size-4 rounded-full bg-rose-700 fill-rose-300 stroke-rose-300 p-0.5 inline-block" />{" "}
-                    585 Likes
+                    588 Likes
                   </p>
 
                   <p className="p-2 px-4 text-muted-foreground text-sm">
@@ -292,7 +292,7 @@ export default function Page() {
               <Instagram className="size-6 text-rose-500" />
               <div>
                 <p className="font-medium">anish_biswas_7_</p>
-                <p className="text-sm text-muted-foreground">712+ followers</p>
+                <p className="text-sm text-muted-foreground">750+ followers</p>
               </div>
               <Button className="ml-auto bg-linear-to-br from-rose-600 text-white to-purple-600">
                 Follow
@@ -323,7 +323,7 @@ export default function Page() {
                 <div>
                   <p className="font-medium">@xevenbiswas</p>
                   <p className="text-sm text-muted-foreground">
-                    108+ followers
+                    120+ followers
                   </p>
                 </div>
                 <Button className="ml-auto bg-linear-to-bl from-blue-600 text-white to-cyan-600">
