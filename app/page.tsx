@@ -42,7 +42,7 @@ export default function Page() {
               priority
             />
           </div>
-          <h1 className="mt-6 pl-2 text-4xl md:text-5xl tracking-tighter font-bold bg-gradient-to-b from-foreground via-foreground/80 to-muted-foreground/50 text-transparent bg-clip-text text-glow cursor-crosshair">
+          <h1 className="mt-6 pl-2 text-4xl md:text-5xl tracking-tighter font-bold bg-linear-to-b from-foreground via-foreground/80 to-muted-foreground/50 text-transparent bg-clip-text text-glow cursor-crosshair">
             Anish Biswas
           </h1>
           <div className="mt-4 flex pl-2 text-base md:text-xl text-muted-foreground">
@@ -186,7 +186,7 @@ export default function Page() {
           {/* LinkedIn Card */}
           <Card
             href="https://www.linkedin.com/in/anishbiswas777/"
-            className="col-span-1 bg-gradient-to-br from-blue-500/5"
+            className="col-span-1 bg-linear-to-br from-blue-500/5"
           >
             <div className="flex items-center gap-4 p-4">
               <Linkedin
@@ -294,7 +294,7 @@ export default function Page() {
                 <p className="font-medium">anish_biswas_7_</p>
                 <p className="text-sm text-muted-foreground">712+ followers</p>
               </div>
-              <Button className="ml-auto bg-gradient-to-br from-rose-600 text-white to-purple-600">
+              <Button className="ml-auto bg-linear-to-br from-rose-600 text-white to-purple-600">
                 Follow
               </Button>
             </div>
@@ -326,7 +326,7 @@ export default function Page() {
                     108+ followers
                   </p>
                 </div>
-                <Button className="ml-auto bg-gradient-to-bl from-blue-600 text-white to-cyan-600">
+                <Button className="ml-auto bg-linear-to-bl from-blue-600 text-white to-cyan-600">
                   Follow
                 </Button>
               </div>
@@ -335,7 +335,7 @@ export default function Page() {
             {/* Spotify Card */}
             <Card
               href="https://open.spotify.com/track/5XLXut2VSILvfeUElPNx3p"
-              className="h-full bg-gradient-to-r from-green-600/10 dark:to-green-900/10"
+              className="h-full bg-linear-to-r from-green-600/10 dark:to-green-900/10"
             >
               <div className="flex items-start gap-2 p-4">
                 <div className="size-12 pt-4">
